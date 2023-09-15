@@ -6,6 +6,3 @@ install:
 deploy:
 	forge script script/VRFDirectFunding.s.sol:VRFDirectFundingScript --rpc-url ${RPC_URL} --etherscan-api-key ${EXPLORER_KEY} --broadcast --verify -vvvv
 
-# test
-test-contract:
-	forge test -vvvvvvv
