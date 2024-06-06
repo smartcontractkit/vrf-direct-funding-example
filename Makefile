@@ -1,8 +1,5 @@
--include .env
-
 install:
-	forge install --no-git Openzeppelin/openzeppelin-contracts smartcontractkit/chainlink
+	forge install Openzeppelin/openzeppelin-contracts@v4.9.6 smartcontractkit/chainlink foundry-rs/forge-std --no-git --no-commit
 
 deploy:
-	forge script script/VRFDirectFunding.s.sol:VRFDirectFundingScript --rpc-url ${RPC_URL} --etherscan-api-key ${EXPLORER_KEY} --broadcast --verify -vvvv
-
+	source .env && forge script script/DeployVRFDirectFunding.s.sol --rpc-url $$RPC_URL --private-key $$PRIVATE_KEY --broadcast --verify -vvvv
